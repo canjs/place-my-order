@@ -262,7 +262,7 @@ automatically updates the page from the data in your application code.</p>
 </code></pre>
 <p>This template displays the value of <code>message</code>.</p>
 <h3>Pass message to the Template</h3>
-<p>Templates are rendered with <a href="../docs/can.view.html">can.view</a>, which takes two arguments: the first is the <code>id</code> of the template,
+<p>Templates are rendered with <a href="http://canjs.com/docs/can.view.html">can.view</a>, which takes two arguments: the first is the <code>id</code> of the template,
 and the second is the data passed to the template (in this case,
 an object with a <code>message</code> property).</p>
 <p>Render the template with a <code>message</code> and insert it into the page with:</p>
@@ -285,18 +285,18 @@ anywhere a normal HTMLElement is used.</p>
 <iframe width="100%" height="300" src="http://jsfiddle.net/donejs/GE3yf/embedded/result,html,js/" allowfullscreen="allowfullscreen" frameborder="0"> </iframe>
 <h2>Update Text in the Page</h2>
 <p>CanJS will update the page automatically when <a href="http://sourcemaking.com/design_patterns/observer">observable</a>
-data changes. To make observable data, pass raw data to <a href="../docs/can.Map.html">can.Map</a>,
-<a href="../docs/can.List.html">can.List</a> or <a href="../docs/can.compute.html">can.compute</a> like:</p>
+data changes. To make observable data, pass raw data to <a href="http://canjs.com/docs/can.Map.html">can.Map</a>,
+<a href="http://canjs.com/docs/can.List.html">can.List</a> or <a href="http://canjs.com/docs/can.compute.html">can.compute</a> like:</p>
 <pre><code>var data = new can.Map({message: &quot;Hello World!&quot;});
 </code></pre>
-<p>To change the message, use the <a href="../docs/can.Map.prototype.attr.html">attr()</a> method of <code>can.Map</code>.</p>
+<p>To change the message, use the <a href="http://canjs.com/docs/can.Map.prototype.attr.html">attr()</a> method of <code>can.Map</code>.</p>
 <pre><code>data.attr(&quot;message&quot;, &quot;Goodbye World!&quot;)
 </code></pre>
 <p>When the button is clicked in the example below, the message is
 changed with <code>data.attr()</code>.</p>
 <iframe width="100%" height="300" src="http://jsfiddle.net/donejs/quTtE/embedded/result,html,js/" allowfullscreen="allowfullscreen" frameborder="0"> </iframe>
 <h3>Show a List in a Template</h3>
-<p>To make an Array observable, pass it to <a href="../docs/can.List.html">can.List</a>.</p>
+<p>To make an Array observable, pass it to <a href="http://canjs.com/docs/can.List.html">can.List</a>.</p>
 <pre><code>var people = new can.List([
     {firstname: &quot;John&quot;, lastname: &quot;Doe&quot;},
     {firstname: &quot;Emily&quot;, lastname: &quot;Dickinson&quot;}
@@ -375,7 +375,7 @@ timestamp:</p>
 <pre><code>&lt;h1&gt;Hello World &lt;i&gt;created a few seconds ago&lt;/i&gt;&lt;/h1&gt;
 </code></pre>
 <p><strong>and</strong> then update to &quot;some seconds ago&quot; and so forth.</p>
-<p>To accomplish this, create a <code>prettyDate</code> <a href="../docs/can.mustache.helper.html">mustache helper</a> that converts
+<p>To accomplish this, create a <code>prettyDate</code> <a href="http://canjs.com/docs/can.mustache.helper.html">mustache helper</a> that converts
 dates into a human readable format.  A helper function is called from within the template where its result
 will be displayed.  The following calls <code>prettyDate</code> with an observable value of <code>createdAt</code>.</p>
 <pre><code>&lt;h1&gt;
@@ -383,7 +383,7 @@ will be displayed.  The following calls <code>prettyDate</code> with an observab
   &lt;i&gt;created {{prettyDate createdAt}}&lt;/i&gt;
 &lt;/h1&gt;
 </code></pre>
-<p>To call a function from a template, <a href="../docs/can.mustache.registerHelper.html">register</a> it with <code>can.view</code>.
+<p>To call a function from a template, <a href="http://canjs.com/docs/can.mustache.registerHelper.html">register</a> it with <code>can.view</code>.
 The third argument passed to <code>can.view</code> is an object with helper functions, so the <code>dateHelper</code> function
 can be registered as <code>prettyView</code>.</p>
 <pre><code>    var dateHelper = function ( date ) {
@@ -392,7 +392,7 @@ can be registered as <code>prettyView</code>.</p>
 
 var frag = can.view(&quot;app-template&quot;, data, {prettyDate: dateHelper});
 </code></pre>
-<p>In this helper, <code>date</code> is not a Date object, instead it is an observable <a href="../docs/can.compute.html">can.compute</a> that
+<p>In this helper, <code>date</code> is not a Date object, instead it is an observable <a href="http://canjs.com/docs/can.compute.html">can.compute</a> that
 contains the <code>createdAt</code> value.  A <code>can.compute</code> is an observable that contains a single value.  To read the value,
 call the compute like you would any other function:</p>
 <pre><code>date() //-&gt; Date

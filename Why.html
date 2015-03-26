@@ -242,15 +242,15 @@
 </ul>
 <p>These plugins have forced the core to be quite extendable, making 3rd party plugin development easy.</p>
 <h3>Engineered limber</h3>
-<p>CanJS’s tools are designed to work under almost every situation. Your server sends back XML with strange urls? That’s ok, overwrite <a href="../docs/can.Model.static.findAll.html">can.Model.findAll</a> or <a href="../docs/can.Model.static.models.html">can.Model.models</a>. Want some special teardown code for a control? Overwrite <a href="../docs/can.Control.prototype.destroy.html">can.Control:destroy</a>.</p>
-<p>But our favorite bit of flexibility is how <a href="../docs/can.Observe.html">can.Observe</a> works with nested data. It converts nested objects into observes automatically. For example:</p>
+<p>CanJS’s tools are designed to work under almost every situation. Your server sends back XML with strange urls? That’s ok, overwrite <a href="http://canjs.com/docs/can.Model.static.findAll.html">can.Model.findAll</a> or <a href="http://canjs.com/docs/can.Model.static.models.html">can.Model.models</a>. Want some special teardown code for a control? Overwrite <a href="http://canjs.com/docs/can.Control.prototype.destroy.html">can.Control:destroy</a>.</p>
+<p>But our favorite bit of flexibility is how <a href="http://canjs.com/docs/can.Observe.html">can.Observe</a> works with nested data. It converts nested objects into observes automatically. For example:</p>
 <p>But most important, <code>change</code> events bubble, letting observes listen for when a nested property changes:</p>
 <h2 id="Powerful">Powerful</h2>
 <h3>Safety</h3>
 <p>Memory safety is really important, especially in long-lived, dynamic pages. CanJS combats this menace in two important and unique ways:</p>
 <h4>Controls that unbind event handlers auto-magically</h4>
 <p>Using templated event binding, Controls can listen to events on objects other than their element. For example, a tooltip listening to the window looks like:</p>
-<p><code>window</code> now has a reference to the control which keeps the <code>tooltipInstance</code> and everything the tooltip instance might reference in memory. CanJS overwrites each library’s element remove functionality to <a href="../docs/can.Control.prototype.destroy.html">destroy</a> controls. Destroying a control unbinds all of its event handlers, removing any memory leaks auto-magically.</p>
+<p><code>window</code> now has a reference to the control which keeps the <code>tooltipInstance</code> and everything the tooltip instance might reference in memory. CanJS overwrites each library’s element remove functionality to <a href="http://canjs.com/docs/can.Control.prototype.destroy.html">destroy</a> controls. Destroying a control unbinds all of its event handlers, removing any memory leaks auto-magically.</p>
 <h4>A model store that does not leak</h4>
 <p>It’s relatively common to load the same model instance multiple times on a single page. For example, an app might request todos due today and high-priority todos and render them like:</p>
 <p><code>todosList.ejs</code> might look like:</p>
@@ -286,7 +286,7 @@
 <p>This means that CanJS and Knockout are slightly faster at different things, but are likely tied for the fastest live-binding libraries.</p>
 <p><em>Note: AngularJS throttles updates, which means it doesn’t fit well with these tests.</em></p>
 <h4>Model and view deferred support for parallel loading</h4>
-<p>[Deferreds Deferreds] are simply awesome for handling asynchronous behavior. <a href="Models.html">can.Model</a> produces deferreds and <a href="../docs/can.view.html">can.view</a> consumes them. With the view modifiers plugin, you can load a template and its data in parallel and render it into an element with:</p>
+<p>[Deferreds Deferreds] are simply awesome for handling asynchronous behavior. <a href="Models.html">can.Model</a> produces deferreds and <a href="http://canjs.com/docs/can.view.html">can.view</a> consumes them. With the view modifiers plugin, you can load a template and its data in parallel and render it into an element with:</p>
 <p>Hot. You can do this without the view modifiers plugin like:</p>
 <h4>Opt-in data binding</h4>
 <p>Although [EJS can.ejs’s] live-binding is super fast, setting up live data binding can be too slow in certain situations (like rendering a list of 1000 items). EJS’s live binding is opt-in. It only turns on if you are using the <code>attr</code> method. If the following template binds to a <code>todo</code>'s <code>name</code> …</p>
