@@ -17,7 +17,7 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>CanJS - Guides </title>
+	<title>CanJS - CanJS </title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -177,7 +177,7 @@
 		
 		<section class="title">
 			<div class="heading">
-<h1>Guides</h1>
+<h1>CanJS</h1>
 	<ul class="tags">
 		<li>page</li>
 	</ul>
@@ -188,7 +188,7 @@
 <div class="sub-heading">
 	
 	
-		<span class="module">guides</span>
+		<span class="module">canjs</span>
 	
 	
 	
@@ -225,12 +225,47 @@
 
 		
 		<section class="comment">
-			<p>This page contains recipes and tutorials that will get you started with building CanJS projects. Choose a section on the left to learn more about the components that make CanJS work and to see CanJS being used in real projects. If you're new to CanJS, a good starting point is <a href="Why.html">Why CanJS?</a></p>
+			<p>This is the detailed documentation of the API for CanJS 2.1, a framework for building
+web applications that provides a lightweight inheritance system, observable
+objects and values, and a powerful MVC core with live-bound templates, among other
+resources.</p>
+<p>If you are just starting with CanJS, you may want to try our <a href="../guides/Tutorial.html">getting started guide</a>.</p>
+<p>CanJS is composed of modules on the left. The following are typically distributed as part of the core
+framework:</p>
+<ul>
+<li>[can.Component] - widgets built on custom tags</li>
+<li>[can.Construct] - inheritable constructor functions</li>
+<li>[can.Control] - declarative event bindings</li>
+<li>[can.Map], [can.List], [can.compute] - observable objects, list, and values.</li>
+<li>[can.Model] -  observes connected to a RESTful JSON interface</li>
+<li>[can.view] - template loading, caching, rendering</li>
+<li>[can.mustache] - Live binding Handlebars and Mustache templates</li>
+<li>[can.route] -  back button and bookmarking support</li>
+</ul>
+<p>The following modules are typically distributed as plugins:</p>
+<ul>
+<li>[can.ejs] - live binding templates</li>
+<li>[can.Construct.proxy] - Proxy construct methods</li>
+<li>[can.Construct.super] - Call super methods</li>
+<li>[can.Map.delegate] - Listen to Observe attributes</li>
+<li>[can.Map::setter] - Use setter methods on Map</li>
+<li>[can.Map.attributes] - Define Observe attributes</li>
+<li>[can.Map.validations] - Validate attributes</li>
+<li>[can.Map.backup] - Backup and restore an Observe's state</li>
+<li>[can.Control.plugin] - Registers a jQuery plugin function for Controls[1]</li>
+<li>[can.view.modifiers View modifiers] - Use jQuery modifiers to render views[1]</li>
+</ul>
+<p>You can use it out of the box on top of jQuery, Zepto, YUI, and Mootools,
+and it's only about 20K.</p>
 
 		</section>
 		
 		
 
+		
+		<section class="api">
+			canjs has no child objects
+		</section>
 		
 	
 	
@@ -287,7 +322,7 @@
 	</script>
 	
 	<script type="text/javascript">
-		var docObject = {"type":"page","name":"guides","src":"guides/Guides.md","description":"","title":"Guides","comment":" ","ignoreTemplateRender":true,"templates":"/Library/WebServer/Documents/GitHub/canjs.com/theme/templates","static":"/Library/WebServer/Documents/GitHub/canjs.com/theme/static","versionsSelectText":"CanJS v<%= version %>","glob":{"pattern":"{guides/*.md,*.md}","ignore":"{node_modules,bower_components}/**/*","cwd":"/Library/WebServer/Documents/GitHub/canjs.com/can"},"dest":"/Library/WebServer/Documents/GitHub/canjs.com/guides","generators":["html"],"urls":{"builderData":"http://bitbuilder.herokuapp.com/canjs","builder":"http://bitbuilder.herokuapp.com/can.custom.js","bithub":"http://bitovi.bithub.com/api/v1/events/","cdn":"//canjs.com/release/","github":"https://github.com/bitovi/canjs.com"},"versions":[{"branch":"master","number":"2.1"},{"number":"2.0"},{"number":"1.1"}],"defaultDownloadVersion":"2.2.0","docConfigDest":"../documentjs.json","project":{"version":"2.2","name":"canjs","source":"/Library/WebServer/Documents/GitHub/canjs"}};
+		var docObject = {"type":"page","name":"canjs","src":"can.md","description":"","title":"CanJS","parent":"javascriptmvc","order":0,"comment":" ","api":"canjs","ignoreTemplateRender":true,"templates":"/Library/WebServer/Documents/GitHub/canjs.com/theme/templates","static":"/Library/WebServer/Documents/GitHub/canjs.com/theme/static","versionsSelectText":"CanJS v<%= version %>","glob":{"pattern":"{guides/*.md,*.md}","ignore":"{node_modules,bower_components}/**/*","cwd":"/Library/WebServer/Documents/GitHub/canjs.com/can"},"dest":"/Library/WebServer/Documents/GitHub/canjs.com/guides","generators":["html"],"urls":{"builderData":"http://bitbuilder.herokuapp.com/canjs","builder":"http://bitbuilder.herokuapp.com/can.custom.js","bithub":"http://bitovi.bithub.com/api/v1/events/","cdn":"//canjs.com/release/","github":"https://github.com/bitovi/canjs.com"},"versions":[{"branch":"master","number":"2.1"},{"number":"2.0"},{"number":"1.1"}],"defaultDownloadVersion":"2.2.0","docConfigDest":"../documentjs.json","project":{"version":"2.2","name":"canjs","source":"/Library/WebServer/Documents/GitHub/canjs"}};
 	</script>
 	
 	

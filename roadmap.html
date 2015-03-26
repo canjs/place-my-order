@@ -17,7 +17,7 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>CanJS - Guides </title>
+	<title>CanJS - Roadmap </title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -159,10 +159,12 @@
 			
 	   </li>
 	
-	   <li class="search-container">
+	   <li class="search-container active">
 	   		<a href="roadmap.html" data-search="Roadmap">
 				Roadmap
 			</a>
+			
+				
 			
 	   </li>
 	
@@ -177,7 +179,7 @@
 		
 		<section class="title">
 			<div class="heading">
-<h1>Guides</h1>
+<h1>Roadmap</h1>
 	<ul class="tags">
 		<li>page</li>
 	</ul>
@@ -188,7 +190,7 @@
 <div class="sub-heading">
 	
 	
-		<span class="module">guides</span>
+		<span class="module">roadmap</span>
 	
 	
 	
@@ -225,7 +227,57 @@
 
 		
 		<section class="comment">
-			<p>This page contains recipes and tutorials that will get you started with building CanJS projects. Choose a section on the left to learn more about the components that make CanJS work and to see CanJS being used in real projects. If you're new to CanJS, a good starting point is <a href="Why.html">Why CanJS?</a></p>
+			<p>Now that 2.0 is out, we're setting our sights on the
+future.  Help us get there by ranking issues and features
+on bithub and fixing them!</p>
+<h2>Community</h2>
+<p>There's more than code that goes into a library.  Checkout
+how we're working to improve CanJS's community:</p>
+<h3>Bithub.com</h3>
+<p>We are developing <a href="http://bithub.com/canjs">bithub.com</a> to track
+all community content. Earn points that you
+can trade for swag by posting apps, articles, events
+and plugins. <strong>Rank bugs and features to let us and the
+rest of the community know where to focus.</strong></p>
+<h3>Meetups</h3>
+<p>We've started meetups across the US.  Bitovi provides
+monthly training and workshop material.  Checkout
+meetup for meetups and <a href="http://bithub.com/canjs/events">bithub.com</a>
+for other events.</p>
+<h2>DOM mutation observers</h2>
+<p>With CanJS 2.0, you can listen to &quot;inserted&quot; and &quot;removed&quot; events in
+every browser.  We want to make it possible to listen to other DOM
+mutation events, making it easier to create custom elements
+that feel completely native.</p>
+<h2>LazyMap and LazyList</h2>
+<p>We want our observable layer to handle anything you throw at
+it.  We've started work on a LazyMap and LazyList that
+experiences almost no initialization penalty.  As you
+read nested objects, it converts them into LazyMaps and LazyLists.</p>
+<p>Furthermore, we want to setup bubbling only when it's necessary and not
+by default. This will reduce the number of events, improving performance.</p>
+<h2>Component improvements</h2>
+<p>can.Component is designed to resemble web components.  As that
+specification takes shape, we will make sure can.Component
+makes use of it.  Future improvements:</p>
+<ul>
+<li>A select attribute on <code>&lt;content&gt;</code>.</li>
+<li>In-page custom elements.</li>
+<li>Iterable <code>&lt;content&gt;</code> for lists.</li>
+</ul>
+<h2>Super Model</h2>
+<p>We want to create list-store that makes complex real-time apps
+easy to build. It will include a fall-through localStorage cache that
+decreases page load times.</p>
+<h2>Dirty checking computes</h2>
+<p>Want to use plain old objects in can.Component?  We're looking to
+create a compute that checks its value periodically.  Hopefully
+this becomes unnecessary as object mutation observers and
+proxies arrive in more browsers.</p>
+<h2>Deferreds and Computes</h2>
+<p>Ever had a compute that represents a deferred that represents an
+observable list?  We have.  We want to make it easy to nest
+computes and deferreds like you can with Lists and Maps.</p>
 
 		</section>
 		
@@ -287,7 +339,7 @@
 	</script>
 	
 	<script type="text/javascript">
-		var docObject = {"type":"page","name":"guides","src":"guides/Guides.md","description":"","title":"Guides","comment":" ","ignoreTemplateRender":true,"templates":"/Library/WebServer/Documents/GitHub/canjs.com/theme/templates","static":"/Library/WebServer/Documents/GitHub/canjs.com/theme/static","versionsSelectText":"CanJS v<%= version %>","glob":{"pattern":"{guides/*.md,*.md}","ignore":"{node_modules,bower_components}/**/*","cwd":"/Library/WebServer/Documents/GitHub/canjs.com/can"},"dest":"/Library/WebServer/Documents/GitHub/canjs.com/guides","generators":["html"],"urls":{"builderData":"http://bitbuilder.herokuapp.com/canjs","builder":"http://bitbuilder.herokuapp.com/can.custom.js","bithub":"http://bitovi.bithub.com/api/v1/events/","cdn":"//canjs.com/release/","github":"https://github.com/bitovi/canjs.com"},"versions":[{"branch":"master","number":"2.1"},{"number":"2.0"},{"number":"1.1"}],"defaultDownloadVersion":"2.2.0","docConfigDest":"../documentjs.json","project":{"version":"2.2","name":"canjs","source":"/Library/WebServer/Documents/GitHub/canjs"}};
+		var docObject = {"type":"page","name":"roadmap","src":"guides/Roadmap.md","description":"","title":"Roadmap","parent":"guides","order":8,"comment":" ","ignoreTemplateRender":true,"templates":"/Library/WebServer/Documents/GitHub/canjs.com/theme/templates","static":"/Library/WebServer/Documents/GitHub/canjs.com/theme/static","versionsSelectText":"CanJS v<%= version %>","glob":{"pattern":"{guides/*.md,*.md}","ignore":"{node_modules,bower_components}/**/*","cwd":"/Library/WebServer/Documents/GitHub/canjs.com/can"},"dest":"/Library/WebServer/Documents/GitHub/canjs.com/guides","generators":["html"],"urls":{"builderData":"http://bitbuilder.herokuapp.com/canjs","builder":"http://bitbuilder.herokuapp.com/can.custom.js","bithub":"http://bitovi.bithub.com/api/v1/events/","cdn":"//canjs.com/release/","github":"https://github.com/bitovi/canjs.com"},"versions":[{"branch":"master","number":"2.1"},{"number":"2.0"},{"number":"1.1"}],"defaultDownloadVersion":"2.2.0","docConfigDest":"../documentjs.json","project":{"version":"2.2","name":"canjs","source":"/Library/WebServer/Documents/GitHub/canjs"}};
 	</script>
 	
 	

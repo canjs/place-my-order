@@ -17,7 +17,7 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>CanJS - Guides </title>
+	<title>CanJS - Migrating to 2.0 </title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -152,10 +152,12 @@
 			
 	   </li>
 	
-	   <li class="search-container">
+	   <li class="search-container active">
 	   		<a href="migrating.html" data-search="Migrating to 2.0">
 				Migrating to 2.0
 			</a>
+			
+				
 			
 	   </li>
 	
@@ -177,7 +179,7 @@
 		
 		<section class="title">
 			<div class="heading">
-<h1>Guides</h1>
+<h1>Migrating to 2.0</h1>
 	<ul class="tags">
 		<li>page</li>
 	</ul>
@@ -188,7 +190,7 @@
 <div class="sub-heading">
 	
 	
-		<span class="module">guides</span>
+		<span class="module">migrating</span>
 	
 	
 	
@@ -225,7 +227,88 @@
 
 		
 		<section class="comment">
-			<p>This page contains recipes and tutorials that will get you started with building CanJS projects. Choose a section on the left to learn more about the components that make CanJS work and to see CanJS being used in real projects. If you're new to CanJS, a good starting point is <a href="Why.html">Why CanJS?</a></p>
+			<p>CanJS 2.0 introduces many new features like:</p>
+<ul>
+<li><a href="../docs/can.view.bindings.can-value.html">2 way bindings</a></li>
+<li>custom elements with <a href="../docs/can.Component.html">can.Component</a></li>
+<li><a href="../docs/can.Component.html">mustache event bindings</a></li>
+</ul>
+<p>and many new API changes.  But it still remains very backwards compatible with
+CanJS 1.1.  This document covers the breaking changes in 2.0 and the deprecated 1.1 features
+that are currently supported, but will be removed in 2.1.</p>
+<h2>Breaking Changes</h2>
+<p>These changes require code modifications to use 2.0.</p>
+<h3>can.route.ready()</h3>
+<p>It is now necessary to always call <a href="../docs/can.route.html">can.route.ready</a> once
+all routes have been set up. If you previously didn't
+use <code>can.route.ready()</code>, just add it on document ready like:</p>
+<pre><code>$(function(){
+  can.route.ready()
+})
+</code></pre>
+<h3>can.Observe.List.Observe is now can.Observe.List.Map</h3>
+<p>Although it was an undocumented feature, you could
+provide a static <code>Observe</code> property on lists to
+specify what type of Observe instance should be created
+when items are added to the list.  For example:</p>
+<pre><code>MyTasks = can.Observe.List({
+  Observe: Task
+},{})
+
+var tasks = new MyTasks();
+tasks.push({});
+tasks.attr(0) instanceof Task //-&gt; true
+</code></pre>
+<p>You should change the static Observe property to
+<code>Map</code> like:</p>
+<pre><code>MyTasks = can.Observe.List({
+  Map: Task
+},{})
+</code></pre>
+<p>In fact, this code should look like:</p>
+<pre><code>MyTasks = can.List.extend({
+  Map: Task
+})
+</code></pre>
+<h3>can.EJS is no longer in core</h3>
+<p>can.EJS is no longer packaged in the core download by default. It has
+been replaced by can.mustache. You
+can use the custom download builder to replace can.mustache with
+can.EJS.</p>
+<h3>can.Observe names and locations</h3>
+<p>Plugins like <strong><em>can.observe.attrbibutes.js</em></strong> are now like
+<strong><em>can.map.attributes.js</em></strong>.  If you are using steal or requirejs to
+load these, you will have to change paths.  In our projects we
+replaced <code>/observe/</code> with <code>/map/</code>.</p>
+<p>Note that <code>can/observe.js</code> (requirejs) and <code>can/observe/observe.js</code>
+still exist.  Loading these files loads <code>can.Map</code>, <code>can.List</code> and
+<code>can.compute</code> and aliases them to the old <code>can.Observe</code> and
+<code>can.Observe.List</code>.</p>
+<h2>Deprecated Changes</h2>
+<p>These are changes that you should strongly consider making to be able to upgrade
+to 2.1 and beyond:</p>
+<h3>can.Observe and can.Observe.List becomes can.Map and can.List</h3>
+<p>In order to comply with the ECMAScript 6 terminology <code>can.Observe</code> has
+been renamed to <code>can.Map</code> and <code>can.Observe.List</code> is now
+called <code>can.List</code>. Backwards compatible mappings
+to <code>can.Observe</code> and <code>can.Observe.List</code> are in place
+but are deprecated.</p>
+<h3>Use .extend for extending Constructs</h3>
+<p>Extending <code>can.Construct</code>s without calling <code>.extend</code> is
+deprecated.  For example, instead of:</p>
+<pre><code>Todo = can.Construct(static, proto)
+MyWidget = can.Control(static, proto)
+Task = can.Model(static, proto)
+</code></pre>
+<p>do:</p>
+<pre><code>Todo = can.Construct.extend(static, proto)
+MyWidget = can.Control.extend(static, proto)
+Task = can.Model.extend(static, proto)
+</code></pre>
+<h3>can.Observe.startBatch and can.Observe.stopBatch becomes can.batch.start and can.batch.stop</h3>
+<p><code>can.Observe.startBatch</code>
+and <code>can.Observe.stopBatch</code> are now available as <a href="../docs/can.batch.start.html">can.batch.start</a>
+and <a href="../docs/can.batch.stop.html">can.batch.stop</a>. Backwards compatible mappings are in place.</p>
 
 		</section>
 		
@@ -287,7 +370,7 @@
 	</script>
 	
 	<script type="text/javascript">
-		var docObject = {"type":"page","name":"guides","src":"guides/Guides.md","description":"","title":"Guides","comment":" ","ignoreTemplateRender":true,"templates":"/Library/WebServer/Documents/GitHub/canjs.com/theme/templates","static":"/Library/WebServer/Documents/GitHub/canjs.com/theme/static","versionsSelectText":"CanJS v<%= version %>","glob":{"pattern":"{guides/*.md,*.md}","ignore":"{node_modules,bower_components}/**/*","cwd":"/Library/WebServer/Documents/GitHub/canjs.com/can"},"dest":"/Library/WebServer/Documents/GitHub/canjs.com/guides","generators":["html"],"urls":{"builderData":"http://bitbuilder.herokuapp.com/canjs","builder":"http://bitbuilder.herokuapp.com/can.custom.js","bithub":"http://bitovi.bithub.com/api/v1/events/","cdn":"//canjs.com/release/","github":"https://github.com/bitovi/canjs.com"},"versions":[{"branch":"master","number":"2.1"},{"number":"2.0"},{"number":"1.1"}],"defaultDownloadVersion":"2.2.0","docConfigDest":"../documentjs.json","project":{"version":"2.2","name":"canjs","source":"/Library/WebServer/Documents/GitHub/canjs"}};
+		var docObject = {"type":"page","name":"migrating","src":"guides/migrating_to_2.0.md","description":"","title":"Migrating to 2.0","parent":"guides","order":7,"comment":" ","ignoreTemplateRender":true,"templates":"/Library/WebServer/Documents/GitHub/canjs.com/theme/templates","static":"/Library/WebServer/Documents/GitHub/canjs.com/theme/static","versionsSelectText":"CanJS v<%= version %>","glob":{"pattern":"{guides/*.md,*.md}","ignore":"{node_modules,bower_components}/**/*","cwd":"/Library/WebServer/Documents/GitHub/canjs.com/can"},"dest":"/Library/WebServer/Documents/GitHub/canjs.com/guides","generators":["html"],"urls":{"builderData":"http://bitbuilder.herokuapp.com/canjs","builder":"http://bitbuilder.herokuapp.com/can.custom.js","bithub":"http://bitovi.bithub.com/api/v1/events/","cdn":"//canjs.com/release/","github":"https://github.com/bitovi/canjs.com"},"versions":[{"branch":"master","number":"2.1"},{"number":"2.0"},{"number":"1.1"}],"defaultDownloadVersion":"2.2.0","docConfigDest":"../documentjs.json","project":{"version":"2.2","name":"canjs","source":"/Library/WebServer/Documents/GitHub/canjs"}};
 	</script>
 	
 	

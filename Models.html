@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie lt-ie9" lang="en">
+<![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>CanJS - Models (&amp; Fixtures) </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/static.css">
+	
+	<!--[if lt IE 9]>
+   <script type="text/javascript" src="static/html5shiv.js"></script>
+    <!--<![endif]-->
+</head>
+
+<body class="docs ">
+	<header>
+		<nav class="container">
+
+			<div class="logo-menu">
+				<a class="brand" href="../index.html">CanJS</a>
+				<ul class="dropdown-menu">
+		          <li><a href="http://javascriptmvc.com">JavaScriptMVC</a></li>
+		          <li><a href="http://canjs.com" class="active">CanJS</a></li>
+		          <li><a href="http://jquerypp.com">jQuery++</a></li>
+		          <li><a href="http://stealjs.com">StealJS</a></li>
+		          <li><a href="http://funcunit.com">FuncUnit</a></li>
+		          <li><a href="http://documentjs.com">DocumentJS</a></li>
+		        </ul>
+			</div>
+			
+			<ul class="nav">
+		        <li >
+	              <a href="../index.html">Home</a>
+                </li>
+		       <li class='active'><a href='index.html'>guides</a></li>
+		       <li><a href='../docs/index.html'>api</a></li>
+		        <li class=" community-menu">
+		          <a href="../community.html#!forums">Community</a>
+		          <ul class="dropdown-menu">
+		            <li><a href="https://forum.javascriptmvc.com/canjs">Forums</a></li>
+		            <li><a href="http://webchat.freenode.net/?channels=canjs">IRC</a></li>
+		            <li><a href="http://bitovi.bithub.com/canjs/app/">Apps</a></li>
+		            <li><a href="http://bitovi.bithub.com/canjs/plugin/">Plugins</a></li>
+		            <li><a href="http://bitovi.bithub.com/canjs/article/">Articles</a></li>
+		            <li><a href="http://github.com/bitovi/canjs">Github</a></li>
+		            <li><a href="http://twitter.com/canjs">Twitter</a></li>
+		            <li><a href="http://bitovi.github.io/canjsmeetup/">Meetups</a></li>
+		          </ul>
+		        </li>
+		        <li >
+	              <a href="../blog/index.html">Blog</a>
+                </li>
+		        <li >
+	              <a href="../download.html">Download</a>
+                </li>
+	      	</ul>
+			
+			<div class="pull-right">
+				<div class="bitovi-menu">
+					<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+					<ul class="dropdown-menu">
+						<li><a href="http://bitovi.com">Bitovi.com</a></li>
+						<li><a href="http://bitovi.com/blog/">Blog</a></li>
+						<li><a href="http://bitovi.com/design/">Design</a></li>
+						<li><a href="http://bitovi.com/development/">Development</a></li>
+						<li><a href="http://bitovi.com/training/">Training</a></li>
+						<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+						<li><a href="http://bitovi.com/people/">People</a></li>
+						<li><a href="http://bitovi.com/contact/">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</nav>
+	</header>
+
+	
+<div class="container api">
+
+	
+	<nav class="sidebar">
+		
+		<h2 id="version">
+	<select id='versions'></select>
+</h2>
+<ul class="api">
+	<!-- First Level -->
+	
+	   <li class="search-container">
+	   		<a href="Why.html" data-search="Why CanJS?">
+				Why CanJS?
+			</a>
+			
+	   </li>
+	
+	   <li class="search-container">
+	   		<a href="Using.html" data-search="Setting up CanJS">
+				Setting up CanJS
+			</a>
+			
+	   </li>
+	
+	   <li class="search-container active">
+	   		<a href="Tutorial.html" data-search="Getting Started">
+				Getting Started
+			</a>
+			
+				
+	<ul class="primary-grouping">
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Setup.html" 
+							data-search="Setup">
+							Setup
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Foundations.html" 
+							data-search="Application Foundations">
+							Application Foundations
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Components.html" 
+							data-search="Getting to Know Components">
+							Getting to Know Components
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Components2.html" 
+							data-search="More on Components">
+							More on Components
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container active  expanded">
+						<a 	class="page" 
+							href="Models.html" 
+							data-search="Models (&amp; Fixtures)">
+							Models (&amp; Fixtures)
+						</a>
+						
+							
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Models2.html" 
+							data-search="Sending Data to a Service">
+							Sending Data to a Service
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Review.html" 
+							data-search="Creating the Menu Component">
+							Creating the Menu Component
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="State.html" 
+							data-search="App State &amp; Basic Routing">
+							App State &amp; Basic Routing
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Define.html" 
+							data-search="The Define Plugin">
+							The Define Plugin
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Routes.html" 
+							data-search="Route Formatting &amp; Serialization">
+							Route Formatting &amp; Serialization
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Recap.html" 
+							data-search="Recap">
+							Recap
+						</a>
+						
+					</li>
+				
+			
+			
+		
+	</ul>
+
+			
+	   </li>
+	
+	   <li class="search-container">
+	   		<a href="Recipes.html" data-search="Recipes">
+				Recipes
+			</a>
+			
+	   </li>
+	
+	   <li class="search-container">
+	   		<a href="contributing.html" data-search="How to Contribute">
+				How to Contribute
+			</a>
+			
+	   </li>
+	
+	   <li class="search-container">
+	   		<a href="changelog.html" data-search="Changelog">
+				Changelog
+			</a>
+			
+	   </li>
+	
+	   <li class="search-container">
+	   		<a href="license.html" data-search="License">
+				License
+			</a>
+			
+	   </li>
+	
+	   <li class="search-container">
+	   		<a href="migrating.html" data-search="Migrating to 2.0">
+				Migrating to 2.0
+			</a>
+			
+	   </li>
+	
+	   <li class="search-container">
+	   		<a href="roadmap.html" data-search="Roadmap">
+				Roadmap
+			</a>
+			
+	   </li>
+	
+</ul>
+	</nav>
+	
+	
+	
+	<article class="content docs">
+	
+	
+		
+		<section class="title">
+			<div class="heading">
+<h1>Models (&amp; Fixtures)</h1>
+	<ul class="tags">
+		<li>page</li>
+	</ul>
+	
+	
+</div>
+
+<div class="sub-heading">
+	
+	
+		<span class="module">Models</span>
+	
+	
+	
+	<span class="inherits">&nbsp;</span>
+</div>
+
+<ul class="links">
+	
+	
+		<li><a href="/Library/WebServer/Documents/GitHub/canjs">source</a></li>
+	
+	
+	
+</ul>
+<br />
+		</section>
+		
+		
+		
+		<section class="contents">
+		</section>
+		
+		
+		
+
+		
+
+		
+			
+		
+		
+		
+		
+
+		
+		<section class="comment">
+			<hr />
+<p><strong>In this Chapter</strong></p>
+<ul>
+<li>can.Model</li>
+<li>can.fixture</li>
+<li>Connecting can.Models with can.Components</li>
+</ul>
+<blockquote>
+<p>Get the code for: <a href="https://github.com/bitovi/canjs/blob/guides-overhaul/guides/examples/PlaceMyOrder/ch-4_canjs-getting-started.zip?raw=true">chapter 4</a></p>
+</blockquote>
+<hr />
+<p>The next item we're going to go over is <a href="../docs/can.Model.html">can.Model</a>. Models make interacting
+with JSON REST services <em>really easy</em>. They do this by encapsulating most of
+the code required to connect to a service and managing the data the service
+returns. Additionally, can.Model extends <a href="../docs/can.Map.html">can.Map</a>, meaning that the objects
+returned have all of the features of a can.Map, such as being observable.</p>
+<p>We'll use a can.Model to provide data for our restaurant list.</p>
+<p>In the models folder, create a file called &quot;site_models.js&quot;. Add the
+following code:</p>
+<pre><code>/**
+ * Restaurants Model
+ */
+var RestaurantModel = can.Model.extend({
+    findAll: &quot;GET /restaurants&quot;
+},
+//Include second, blank parameter object to set instanceProperties
+{});
+</code></pre>
+<p>Because it is a <a href="../docs/can.Construct.html">can.Construct</a>, can.Model.extend can take up to three parameters:</p>
+<ol>
+<li>name</li>
+<li>staticProperties</li>
+<li>instanceProperties</li>
+</ol>
+<p>A can.Model's staticProperties parameter has several reserved properties you
+can add that simplify accessing data from a JSON REST service. These
+properties are:</p>
+<ol>
+<li>findAll</li>
+<li>findOne</li>
+<li>create</li>
+<li>update</li>
+<li>destroy</li>
+</ol>
+<p>The <code>find___</code> methods are available directly off of the object definition (i.e.,
+they are static). The <code>create</code>, <code>update</code>, and <code>destroy</code> methods are available off of
+specific instances of a can.Model. We'll see how to use these below.</p>
+<p><strong>Reminder</strong>: The number of parameters you pass in to an extend method is
+important. If you pass in a single parameter object, the extend method will
+use that to set the instanceProperties. If you pass in two parameter
+objects, the <em>first</em> object passed in will be used to set the
+<em>staticProperties</em>. The second parameter will be used to set the
+<em>instanceProperties</em>. Here, we only want to set the staticProperties, so we
+must pass in a second, blank object.</p>
+<p>A few examples illustrate this, below:</p>
+<pre><code>var MyModel = can.Model.extend({
+ findAll: function () {
+ // Static method
+ }
+}, {
+ destroy: function () {
+ // Instance method
+ }
+});
+
+MyModel.findAll(); // Reference a method defined on the constructor
+
+var modelInstance = new MyModel();
+modelInstance.destroy(); // Reference a method defined on the prototype
+</code></pre>
+<h2>The Data for Our Model</h2>
+<p>We're not going to connect to a server to retrieve our data; however, we're
+going to code our model as if we were. How can this possibly work? CanJS
+provides a handy utility, can.fixture, that we can use to easily mimic the
+functionality of connecting to a server. As the CanJS docs say, &quot;can.fixture
+intercepts an AJAX request and simulates the response with a file or a
+function. You can use can.fixture to develop JavaScript independently of
+backend services.&quot;</p>
+<p>can.fixture is not included with the base CanJS package. It's a good practice
+to keep it separate from your production CanJS library, which is why we
+downloaded it from its CDN in a separate script tag, rather than including it
+with our custom download. <em>If you use can.fixture during development, remember
+to remove it once you are connecting to your REST services</em>.</p>
+<p>Let's create a fixture that will respond to our requests for menu item data.
+Create another file in the models folder called &quot;fixtures.js&quot;. Add the
+following code to that file:</p>
+<pre><code>/**
+ * Restaurants Model Fixture
+ */
+can.fixture(&quot;GET /restaurants&quot;, function requestHandler() {
+    return [
+        {
+            &quot;name&quot;: &quot;Spago&quot;,
+            &quot;location&quot;: &quot;USA&quot;,
+            &quot;cuisine&quot;: &quot;Modern&quot;,
+            &quot;owner&quot;: &quot;Wolfgang Puck&quot;,
+            &quot;restaurantId&quot;: 1
+        },
+        {
+            &quot;name&quot;: &quot;El Bulli&quot;,
+            &quot;location&quot;: &quot;Spain&quot;,
+            &quot;cuisine&quot;: &quot;Modern&quot;,
+            &quot;owner&quot;: &quot;Ferran Adria&quot;,
+            &quot;restaurantId&quot;: 2
+        },
+        {
+            &quot;name&quot;: &quot;The French Laundry&quot;,
+            &quot;location&quot;: &quot;USA&quot;,
+            &quot;cuisine&quot;: &quot;French Traditional&quot;,
+            &quot;owner&quot;: &quot;Thomas Keller&quot;,
+            &quot;restaurantId&quot;: 3
+        }
+    ];
+});
+</code></pre>
+<p>The first argument to can.fixture, &quot;GET /restaurants&quot;, tells CanJS to
+intercept any GET requests to the resource &quot;/restaurants&quot;. The second argument
+is a function that returns the data we want to get when the application makes
+a service call. Because we're simulating a findAll method, we need to return
+an array. The findAll method expects an array. By default, if it does not
+receive one, it will throw an error. If you need to connect to services that
+return data that doesn't match the expected return type of the <code>find___</code>
+methods, don't fret. There are ways to manage this, which we'll work with
+later on.</p>
+<h2>Connecting the Model to the Component</h2>
+<p>It's time to connect all of this together in our view model. Simply open up
+restaurant_list_component.js. Edit the RestaurantListViewModel as follows,
+updating the restaurants property to receive data from the model we created:</p>
+<pre><code>var RestaurantListViewModel = can.Map.extend({
+    restaurants: new RestaurantModel.List({}),
+    currentRestaurant: undefined,
+    restaurantSelected: function (viewModel, select) {
+        var restaurant = select.find('option:checked').data('restaurant');
+        var currentRestaurant = 'currentRestaurant';
+        this.attr(currentRestaurant, restaurant);
+    }
+});
+</code></pre>
+<p>Note that there are a few ways to call a findAll method on a can.Model. The
+first way is to call the method explicitly. Using the RestaurantModel as an
+example, that would look like this:</p>
+<pre><code>RestaurantModel.findAll({//paramsObject},
+    function success(returnedObject){
+        //
+    },
+    function error(errorObject){
+        //
+    });
+</code></pre>
+<p>In the code above, however, we called the findAll method indirectly:</p>
+<pre><code>restaurants: new RestaurantModel.List({}),
+</code></pre>
+<p>This is a special feature of the can.Model.List constructor. When can.Model is
+extended, can.Model.List is automatically extended, as well. It is set as the
+model's List property. If a can.Model.List is instantiated, and you pass in a
+plain JavaScript object for its construction parameter, that parameter is used
+as the parameter for the Model's findAll method. At first, this will return an
+empty list; however, the can.Model's findAll method will then be called, and
+the list will be populated with the results of that call automatically, once
+the findAll method receives its results.</p>
+<p>We'll look at the can.Model's findOne method later on, when we create our Menu
+Component. Finally, let's add the scripts we created to our index.html file:</p>
+<pre><code>&lt;script src=&quot;libs/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;libs/can.custom.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;libs/can.fixture.js&quot;&gt;&lt;/script&gt;
+&lt;!--Begin add--&gt;
+&lt;script src=&quot;models/fixtures.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;models/site_models.js&quot;&gt;&lt;/script&gt;
+&lt;!--End add--&gt;
+&lt;script src=&quot;components/restaurant_list/restaurant_list_component.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>Let's go back to our app now, and see what happens! If everything went
+according to plan, you should see something like this:</p>
+<p><img src="images/4_models/FinalRestaurantComponentNoSelect.png" alt="" /></p>
+<p>And, when you select a restaurant from the list, you should see:</p>
+<p><img src="images/4_models/FinalRestaurantComponentSelect.png" alt="" /></p>
+<hr />
+<p><span class="pull-left"><a href="Components2.html">&lt; More on Components</a></span></p>
+<p><span class="pull-right"><a href="Models2.html">Sending Data to a Service &gt;</a></span></p>
+
+		</section>
+		
+		
+
+		
+	
+	
+	</article>
+	
+	
+
+</div>
+
+
+
+
+
+	
+	
+	<footer>
+		<nav class="container">
+			<a class="brand" href="index.html"></a>
+			<ul class='nav'>
+				<li >
+	              <a href="../index.html">Home</a>
+	            </li>
+		        <li class='active'><a href='index.html'>guides</a></li>
+		        <li><a href='../docs/index.html'>api</a></li>
+		        <li class="">
+		          <a href="../community.html#!forums">Community</a>
+		        </li>
+		        <li >
+	              <a href="../blog/index.html">Blog</a>
+	            </li>
+		        <li >
+	              <a href="../download.html">Download</a>
+	            </li>
+            </ul>
+		</nav>
+	</footer>
+	
+
+    
+    <script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-2302003-11']);
+	  _gaq.push(['_setDomainName', 'canjs.com']);
+	  _gaq.push(['_setAllowLinker', true]);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+	
+	<script type="text/javascript">
+		var docObject = {"type":"page","name":"Models","src":"guides/models.md","description":"","title":"Models (& Fixtures)","parent":"Tutorial","order":5,"comment":" ","ignoreTemplateRender":true,"templates":"/Library/WebServer/Documents/GitHub/canjs.com/theme/templates","static":"/Library/WebServer/Documents/GitHub/canjs.com/theme/static","versionsSelectText":"CanJS v<%= version %>","glob":{"pattern":"{guides/*.md,*.md}","ignore":"{node_modules,bower_components}/**/*","cwd":"/Library/WebServer/Documents/GitHub/canjs.com/can"},"dest":"/Library/WebServer/Documents/GitHub/canjs.com/guides","generators":["html"],"urls":{"builderData":"http://bitbuilder.herokuapp.com/canjs","builder":"http://bitbuilder.herokuapp.com/can.custom.js","bithub":"http://bitovi.bithub.com/api/v1/events/","cdn":"//canjs.com/release/","github":"https://github.com/bitovi/canjs.com"},"versions":[{"branch":"master","number":"2.1"},{"number":"2.0"},{"number":"1.1"}],"defaultDownloadVersion":"2.2.0","docConfigDest":"../documentjs.json","project":{"version":"2.2","name":"canjs","source":"/Library/WebServer/Documents/GitHub/canjs"}};
+	</script>
+	
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript' 
+				data-main="static"
+				data-config="./static/config.js"
+				src="./static/steal.production.js"
+		    		bundles-path="bundles"></script>
+	
+	
+</body>
+
+</html>

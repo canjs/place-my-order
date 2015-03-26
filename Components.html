@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie lt-ie9" lang="en">
+<![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>CanJS - Getting to Know Components </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/static.css">
+	
+	<!--[if lt IE 9]>
+   <script type="text/javascript" src="static/html5shiv.js"></script>
+    <!--<![endif]-->
+</head>
+
+<body class="docs ">
+	<header>
+		<nav class="container">
+
+			<div class="logo-menu">
+				<a class="brand" href="../index.html">CanJS</a>
+				<ul class="dropdown-menu">
+		          <li><a href="http://javascriptmvc.com">JavaScriptMVC</a></li>
+		          <li><a href="http://canjs.com" class="active">CanJS</a></li>
+		          <li><a href="http://jquerypp.com">jQuery++</a></li>
+		          <li><a href="http://stealjs.com">StealJS</a></li>
+		          <li><a href="http://funcunit.com">FuncUnit</a></li>
+		          <li><a href="http://documentjs.com">DocumentJS</a></li>
+		        </ul>
+			</div>
+			
+			<ul class="nav">
+		        <li >
+	              <a href="../index.html">Home</a>
+                </li>
+		       <li class='active'><a href='index.html'>guides</a></li>
+		       <li><a href='../docs/index.html'>api</a></li>
+		        <li class=" community-menu">
+		          <a href="../community.html#!forums">Community</a>
+		          <ul class="dropdown-menu">
+		            <li><a href="https://forum.javascriptmvc.com/canjs">Forums</a></li>
+		            <li><a href="http://webchat.freenode.net/?channels=canjs">IRC</a></li>
+		            <li><a href="http://bitovi.bithub.com/canjs/app/">Apps</a></li>
+		            <li><a href="http://bitovi.bithub.com/canjs/plugin/">Plugins</a></li>
+		            <li><a href="http://bitovi.bithub.com/canjs/article/">Articles</a></li>
+		            <li><a href="http://github.com/bitovi/canjs">Github</a></li>
+		            <li><a href="http://twitter.com/canjs">Twitter</a></li>
+		            <li><a href="http://bitovi.github.io/canjsmeetup/">Meetups</a></li>
+		          </ul>
+		        </li>
+		        <li >
+	              <a href="../blog/index.html">Blog</a>
+                </li>
+		        <li >
+	              <a href="../download.html">Download</a>
+                </li>
+	      	</ul>
+			
+			<div class="pull-right">
+				<div class="bitovi-menu">
+					<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+					<ul class="dropdown-menu">
+						<li><a href="http://bitovi.com">Bitovi.com</a></li>
+						<li><a href="http://bitovi.com/blog/">Blog</a></li>
+						<li><a href="http://bitovi.com/design/">Design</a></li>
+						<li><a href="http://bitovi.com/development/">Development</a></li>
+						<li><a href="http://bitovi.com/training/">Training</a></li>
+						<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+						<li><a href="http://bitovi.com/people/">People</a></li>
+						<li><a href="http://bitovi.com/contact/">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</nav>
+	</header>
+
+	
+<div class="container api">
+
+	
+	<nav class="sidebar">
+		
+		<h2 id="version">
+	<select id='versions'></select>
+</h2>
+<ul class="api">
+	<!-- First Level -->
+	
+	   <li class="search-container">
+	   		<a href="Why.html" data-search="Why CanJS?">
+				Why CanJS?
+			</a>
+			
+	   </li>
+	
+	   <li class="search-container">
+	   		<a href="Using.html" data-search="Setting up CanJS">
+				Setting up CanJS
+			</a>
+			
+	   </li>
+	
+	   <li class="search-container active">
+	   		<a href="Tutorial.html" data-search="Getting Started">
+				Getting Started
+			</a>
+			
+				
+	<ul class="primary-grouping">
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Setup.html" 
+							data-search="Setup">
+							Setup
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Foundations.html" 
+							data-search="Application Foundations">
+							Application Foundations
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container active  expanded">
+						<a 	class="page" 
+							href="Components.html" 
+							data-search="Getting to Know Components">
+							Getting to Know Components
+						</a>
+						
+							
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Components2.html" 
+							data-search="More on Components">
+							More on Components
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Models.html" 
+							data-search="Models (&amp; Fixtures)">
+							Models (&amp; Fixtures)
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Models2.html" 
+							data-search="Sending Data to a Service">
+							Sending Data to a Service
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Review.html" 
+							data-search="Creating the Menu Component">
+							Creating the Menu Component
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="State.html" 
+							data-search="App State &amp; Basic Routing">
+							App State &amp; Basic Routing
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Define.html" 
+							data-search="The Define Plugin">
+							The Define Plugin
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Routes.html" 
+							data-search="Route Formatting &amp; Serialization">
+							Route Formatting &amp; Serialization
+						</a>
+						
+					</li>
+				
+			
+			
+		
+			
+				
+				
+					<li class="search-container  ">
+						<a 	class="page" 
+							href="Recap.html" 
+							data-search="Recap">
+							Recap
+						</a>
+						
+					</li>
+				
+			
+			
+		
+	</ul>
+
+			
+	   </li>
+	
+	   <li class="search-container">
+	   		<a href="Recipes.html" data-search="Recipes">
+				Recipes
+			</a>
+			
+	   </li>
+	
+	   <li class="search-container">
+	   		<a href="contributing.html" data-search="How to Contribute">
+				How to Contribute
+			</a>
+			
+	   </li>
+	
+	   <li class="search-container">
+	   		<a href="changelog.html" data-search="Changelog">
+				Changelog
+			</a>
+			
+	   </li>
+	
+	   <li class="search-container">
+	   		<a href="license.html" data-search="License">
+				License
+			</a>
+			
+	   </li>
+	
+	   <li class="search-container">
+	   		<a href="migrating.html" data-search="Migrating to 2.0">
+				Migrating to 2.0
+			</a>
+			
+	   </li>
+	
+	   <li class="search-container">
+	   		<a href="roadmap.html" data-search="Roadmap">
+				Roadmap
+			</a>
+			
+	   </li>
+	
+</ul>
+	</nav>
+	
+	
+	
+	<article class="content docs">
+	
+	
+		
+		<section class="title">
+			<div class="heading">
+<h1>Getting to Know Components</h1>
+	<ul class="tags">
+		<li>page</li>
+	</ul>
+	
+	
+</div>
+
+<div class="sub-heading">
+	
+	
+		<span class="module">Components</span>
+	
+	
+	
+	<span class="inherits">&nbsp;</span>
+</div>
+
+<ul class="links">
+	
+	
+		<li><a href="/Library/WebServer/Documents/GitHub/canjs">source</a></li>
+	
+	
+	
+</ul>
+<br />
+		</section>
+		
+		
+		
+		<section class="contents">
+		</section>
+		
+		
+		
+
+		
+
+		
+			
+		
+		
+		
+		
+
+		
+		<section class="comment">
+			<hr />
+<p><strong>In this Chapter</strong></p>
+<ul>
+<li>Constructors in CanJS
+<ul>
+<li>The <code>extend</code> method</li>
+<li>The <code>init</code> method</li>
+</ul></li>
+<li>First can.Component
+<ul>
+<li>Auto Instantiation</li>
+<li>Anatomy of a can.Component</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>Get the code for: <a href="https://github.com/bitovi/canjs/blob/guides-overhaul/guides/examples/PlaceMyOrder/ch-2_canjs-getting-started.zip?raw=true">chapter 2</a></p>
+</blockquote>
+<hr />
+<h2>Constructors in CanJS</h2>
+<p>Before we work with any of the objects in CanJS, it will be helpful for us if we
+understand <a href="../docs/can.Construct.html">can.Construct</a>. Most of the objects in CanJS are derived from
+can.Construct. can.Construct provides a way to easily use the power of
+prototypal inheritance without worrying about hooking up all the particulars
+yourself.</p>
+<p>Without going into exhaustive detail, can.Construct contains a few methods we'll encounter frequently in other objects:</p>
+<ul>
+<li>Prototype
+<ul>
+<li>init</li>
+</ul></li>
+<li>Static
+<ul>
+<li>extend</li>
+</ul></li>
+</ul>
+<p>We'll look at the extend method first.</p>
+<h3>The extend method</h3>
+<p>can.Construct's <code>extend</code> method is used to create
+&quot;constructor functions&quot;. Constructor functions create instances of objects.
+The extend method can take up to three arguments:</p>
+<ol>
+<li>name: string</li>
+<li>staticProperties: object</li>
+<li>instanceProperties: object</li>
+</ol>
+<p>The extend method behaves differently depending on the number of arguments you
+pass it. The name and staticProperties arugments are optional. For example, if
+you pass it one argument, it will be use the value you pass it to set its
+instanceProperties. If you pass it two arguments, it use the first to set its
+staticProperties, and the second to set its instanceProperties. Finally, if
+you pass in all three arguments, the first will set its name, the second in
+staticProperties, and the third its instanceProperties.</p>
+<p>In the example below, I only want to pass in staticProperties. Therefore, I
+must call the method as follows:</p>
+<pre><code>can.Construct.extend({
+    //Static properties here
+},
+//Blank object as second parameter
+{});
+</code></pre>
+<p>This pattern will apply to all objects in CanJS that have an extend method.</p>
+<h3>The init method</h3>
+<p>The <code>init</code> method is called whenever a new instance of a
+can.Construct is created. Init is where the bulk of your initialization code
+should go. Inside of the init function, the <code>this</code> keyword will refer to the
+new instance, and <code>this</code> will contain the arguments passed to the
+constructor. A common thing to do in init is save the arguments passed into
+the constructor. An example is below:</p>
+<pre><code>var Person = can.Construct.extend({
+    init: function(first, last) {
+        this.first = first;
+        this.last = last;
+    }
+});
+
+var actor = new Person(&quot;Abe&quot;, &quot;Vigoda&quot;);
+</code></pre>
+<h2>First can.Component <a name="first-component"></a></h2>
+<p>If you recall from the introduction, a can.Component is like a self-contained,
+mini web application—i.e., it's encapsulated. Because can.Components are
+encapsulated, they should each contain their own:</p>
+<ul>
+<li>View template (.stache file)</li>
+<li>JS</li>
+<li>CSS</li>
+</ul>
+<p>This is why we created a components folder for our app—instead of, say, a
+JS folder. Each component we develop will be in a folder that contains all
+the files that support that component. This makes components portable,
+enabling you to reuse them across projects. It also isolates them, making
+them easier to test and maintain.</p>
+<p>In the components folder, create a subfolder called <em>restaurant_list</em>, along with the following files:</p>
+<pre>
+| restaurant_list
+    |--restaurant_list_component.js
+    |--restaurant_list.stache
+</pre>
+<p>Put the following code inside restaurant_list_component.js:</p>
+<pre><code>/**
+ * @namespace RestaurantListComponent
+ */
+can.Component.extend({
+
+    tag: 'restaurant-list',
+    template: can.view('components/restaurant_list/restaurant_list.stache'),
+    scope: {
+            currentRestaurant: 'Hello Restaurant Customer'
+    }
+
+});
+</code></pre>
+<p>Add the following code to restaurant_list.stache:</p>
+<pre><code>&lt;h1&gt;{{currentRestaurant}}&lt;/h1&gt;
+</code></pre>
+<p>Add the code below to the /app/base_template.stache file:</p>
+<pre><code>&lt;restaurant-list&gt;&lt;/restaurant-list&gt;
+</code></pre>
+<p>Next, open up your app.js file, and edit it as follows:</p>
+<pre><code>$(function () {
+
+    $('#can-app').html(can.view('base_template.stache', {}));
+
+});
+</code></pre>
+<p>For the moment, if you don't know what can.view does, don't worry. We'll
+go over it in detail soon.</p>
+<p>Finally, we need to add a reference to restaurant_list_component.js in the
+index.html file, as follows:</p>
+<pre><code>&lt;script src=&quot;libs/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;libs/can.custom.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;libs/can.fixture.js&quot;&gt;&lt;/script&gt;
+  &lt;!--Begin add--&gt;
+  &lt;script src=&quot;components/restaurant_list/restaurant_list_component.js&quot;&gt;&lt;/script&gt;
+  &lt;!--End add--&gt;
+&lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>Now, go back out to your app in the browser, and refresh it. You should
+see it printing: &quot;Hello Restaurant Customer&quot;.</p>
+<h3>Auto Instantiation</h3>
+<p>If you recall from the discussion above regarding can.Construct, whenever you
+declare an object using can.Construct, it must be instantiated. Normally, you
+would either directly instantiate objects using the <code>new</code> keyword, or pass the
+constructor to an object that would create instances of it. <em>can.Component is
+an exception</em>.</p>
+<p>All we have to do is declare the can.Component using its <code>extend</code> method.
+Once you declare your can.Component, you've registered your component with the
+system. When CanJS parses the base_template.stache file, and encounters the
+restaurant-list tag, it will automatically instantiate the can.Component
+associated with it, generate the Component's view inside of its custom tag,
+and bind that view to your component's scope.</p>
+<p>Let's look at an image that describes how all of this works, to make it
+clearer:</p>
+<p><img src="images/2_first_component/ComponentLoadCycle.png" alt="" /></p>
+<h3>Basic Anatomy of a can.Component</h3>
+<p>The can.Component we created above had three properties.</p>
+<ul>
+<li><a href="#tag">tag</a>,</li>
+<li><a href="#template">template</a>, and</li>
+<li><a href="#scope">scope</a></li>
+</ul>
+<h4>The &quot;tag&quot; Property <a name="tag"></a></h4>
+<p>The can.Component's <code>tag</code> property associates that
+can.Component with a specific, custom HTML tag:</p>
+<p><img src="images/2_first_component/ComponentTagLinkDiagram.png" alt="" /></p>
+<p>As mentioned above, when the template containing the can.Component's tag is
+parsed, the can.Component is instantiated, and the contents of its rendered
+template are inserted as the HTML contents of the custom tag:</p>
+<p><img src="images/2_first_component/ComponentTagRenderedHTML.png" alt="" /></p>
+<h4>Template <a name="template"></a></h4>
+<p>The <code>template</code> property of the can.Component contains the string
+value of the can.Component's template. Note that the template property just
+contains a string value. You can inline the template, if it is small. However,
+the recommended way of working with templates, to maintain separation of
+concerns, is to keep them in their own files and load them using can.view, as
+we have done here.</p>
+<h4>Scope <a name="scope"></a></h4>
+<p>The <code>scope</code> object is the can.Component's view model. The view
+model is an abstraction of the view that exposes public properties and
+functions. Any property or method defined on the scope object is available
+from the can.Component's template as either a Stache data key, or a function.
+In our example above, we created the property &quot;currentRestaurant&quot;, and then
+referenced it as a Stache data key in our template.</p>
+<p><img src="images/2_first_component/ComponentScopeTemplateLink.png" alt="" /></p>
+<h3>can.Map &amp; can.List</h3>
+<p>The scope is a special type of object, called a
+&quot;can.Map&quot;. can.Map objects are observable. Observable objects provide a way
+for you to listen for and keep track of changes to them. What this means, in
+this instance, is that if you make a change to your scope, those changes will
+be reflected automatically in your view. If you've cross-bound the values
+between your scope and your view, changes to your view will also be reflected
+in your scope. We'll see how this works in the next chapter.</p>
+<p>can.Map objects listen for changes made using their <code>attr</code> method. This is
+important. In order to broadcast the associated events when you change a
+property on a can.Map, you must use the attr method when setting a value.</p>
+<p>The attr method can be used to either get or set a property on a can.Map.
+<code>attr</code> works with deep properties—i.e., properties within properties. Here's
+an example:</p>
+<pre><code>//Get the first property off of the name property off of person
+myCanMapInstance.attr('person.name.first');
+
+//Set the last property of the person's name property
+myCanMapInstance.attr('person.name.last', 'Bach');
+</code></pre>
+<p>Observable arrays are also available with can.List, which is based on can.Map.</p>
+<hr />
+<p><span class="pull-left"><a href="Foundations.html">&lt; Application Foundations</a></span></p>
+<p><span class="pull-right"><a href="Components2.html">More on Components &gt;</a></span></p>
+
+		</section>
+		
+		
+
+		
+	
+	
+	</article>
+	
+	
+
+</div>
+
+
+
+
+
+	
+	
+	<footer>
+		<nav class="container">
+			<a class="brand" href="index.html"></a>
+			<ul class='nav'>
+				<li >
+	              <a href="../index.html">Home</a>
+	            </li>
+		        <li class='active'><a href='index.html'>guides</a></li>
+		        <li><a href='../docs/index.html'>api</a></li>
+		        <li class="">
+		          <a href="../community.html#!forums">Community</a>
+		        </li>
+		        <li >
+	              <a href="../blog/index.html">Blog</a>
+	            </li>
+		        <li >
+	              <a href="../download.html">Download</a>
+	            </li>
+            </ul>
+		</nav>
+	</footer>
+	
+
+    
+    <script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-2302003-11']);
+	  _gaq.push(['_setDomainName', 'canjs.com']);
+	  _gaq.push(['_setAllowLinker', true]);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+	
+	<script type="text/javascript">
+		var docObject = {"type":"page","name":"Components","src":"guides/components.md","description":"","title":"Getting to Know Components","parent":"Tutorial","order":3,"comment":" ","ignoreTemplateRender":true,"templates":"/Library/WebServer/Documents/GitHub/canjs.com/theme/templates","static":"/Library/WebServer/Documents/GitHub/canjs.com/theme/static","versionsSelectText":"CanJS v<%= version %>","glob":{"pattern":"{guides/*.md,*.md}","ignore":"{node_modules,bower_components}/**/*","cwd":"/Library/WebServer/Documents/GitHub/canjs.com/can"},"dest":"/Library/WebServer/Documents/GitHub/canjs.com/guides","generators":["html"],"urls":{"builderData":"http://bitbuilder.herokuapp.com/canjs","builder":"http://bitbuilder.herokuapp.com/can.custom.js","bithub":"http://bitovi.bithub.com/api/v1/events/","cdn":"//canjs.com/release/","github":"https://github.com/bitovi/canjs.com"},"versions":[{"branch":"master","number":"2.1"},{"number":"2.0"},{"number":"1.1"}],"defaultDownloadVersion":"2.2.0","docConfigDest":"../documentjs.json","project":{"version":"2.2","name":"canjs","source":"/Library/WebServer/Documents/GitHub/canjs"}};
+	</script>
+	
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript' 
+				data-main="static"
+				data-config="./static/config.js"
+				src="./static/steal.production.js"
+		    		bundles-path="bundles"></script>
+	
+	
+</body>
+
+</html>
