@@ -15,7 +15,7 @@ var PMORestaurantListViewModel = can.Map.extend({
     cities: {
       get: function() {
         var state = this.attr('state');
-        return state ? City.findAll({ state }) : null;
+        return state ? City.findAll({ state: state }) : null;
       }
     },
     city: {
