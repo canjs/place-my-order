@@ -1,0 +1,48 @@
+<div class="order-history">
+  <div class="order header">
+    <address>Name / Address / Phone</address>
+    <div class="items">Order</div>
+    <div class="total">Total</div>
+    <div class="actions">Action</div>
+  </div>
+
+  {{#if orders.isPending}}
+    <div class="loading"></div>
+  {{else}}
+    {{#if orders.value.new}}
+      <pmo-order-history-item
+        status="new"
+        title="New Orders"
+        orders="{orders.value.new}"
+        empty-message="No new orders">
+      </pmo-order-history-item>
+    {{/if}}
+
+    {{#if orders.value.preparing}}
+      <pmo-order-history-item
+        status="preparing"
+        title="Preparing"
+        orders="{orders.value.preparing}"
+        empty-message="No orders preparing">
+      </pmo-order-history-item>
+    {{/if}}
+
+    {{#if orders.value.delivery}}
+      <pmo-order-history-item
+        status="delivery"
+        title="In delivery"
+        orders="{orders.value.delivery}"
+        empty-message="No orders in delivery">
+      </pmo-order-history-item>
+    {{/if}}
+
+    {{#if orders.value.delivered}}
+      <pmo-order-history-item
+        status="delivered"
+        title="Delivered"
+        orders="{orders.value.delivered}"
+        empty-message="No delivered orders">
+      </pmo-order-history-item>
+    {{/if}}
+  {{/if}}
+</div>
