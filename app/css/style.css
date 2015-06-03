@@ -2920,7 +2920,7 @@ fieldset[disabled] .restaurant-content .order-link .btn.active {
     margin: 0 auto;
     width: 480px;
 }
-.order-form bit-panel {
+.order-form .panel {
     display: block;
     margin-top: 20px;
 }
