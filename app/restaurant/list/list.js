@@ -1,4 +1,4 @@
-var PMORestaurantListViewModel = can.Map.extend({
+var RestaurantListViewModel = can.Map.extend({
   define: {
     states: {
       get: function() {
@@ -39,6 +39,6 @@ var PMORestaurantListViewModel = can.Map.extend({
 
 can.Component.extend({
   tag: 'pmo-restaurant-list',
-  viewModel: PMORestaurantListViewModel,
+  viewModel: RestaurantListViewModel,
   template: can.view('restaurant/list/list.stache')
 });
