@@ -1,4 +1,12 @@
 var PMORestaurantDetailsViewModel = can.Map.extend({
+  define: {
+    restaurant: {
+      get: function() {
+        var slug = this.attr('slug');
+        return Restaurant.findOne({id: slug});
+      }
+    }
+  }
 });
 
 can.Component.extend({
