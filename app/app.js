@@ -4,7 +4,7 @@ $(function () {
   var appState = new AppState();
 
   // Bind the application state to the root of the application
-  $('#can-app').html(can.view('base_template.stache', appState));
+  $('#can-app').html(can.view('layout.stache', appState));
 
   // Bind the application state to the can.route
   can.route.map(appState);
