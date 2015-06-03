@@ -1,5 +1,6 @@
 var Restaurant = can.Model.extend({
-	findAll: 'GET /api/restaurants'
+  findAll: 'GET /api/restaurants',
+  findOne: 'GET /api/restaurants/:id'
 }, {
-	// Include second, empty parameter object to set instanceProperties
+  // Include second, empty parameter object to set instanceProperties
 });
