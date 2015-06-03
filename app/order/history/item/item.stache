@@ -52,6 +52,6 @@
   </div>
 {{/each}}
 
-{{^if value.length}}
+{{^if orders.length}}
   <div class="order empty">{{emptyMessage}}</div>
 {{/if}}
