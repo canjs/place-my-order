@@ -16,3 +16,7 @@
     <pmo-restaurant-list></pmo-restaurant-list>
   {{/if}}
 {{/eq}}
+
+{{#eq page "orders"}}
+  <pmo-order-history></pmo-order-history>
+{{/eq}}

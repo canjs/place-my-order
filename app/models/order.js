@@ -1,5 +1,6 @@
 var Order = can.Model.extend({
-  create: 'POST /api/orders'
+  create: 'POST /api/orders',
+  findAll: 'GET /api/orders'
 }, {
   define: {
     status: {
@@ -26,9 +27,32 @@ var Order = can.Model.extend({
 });
 
 Order.List = Order.List.extend({
+},{
   totals: function(){
     return this.map(function(order){
       return order.attr("total");
     });
+  },
+
+  filterByStatus: function(status) {
+    return this.filter(function(order) {
+      return order.attr('status') === status;
+    });
+  },
+
+  new: function() {
+    return this.filterByStatus('new');
+  },
+
+  preparing: function() {
+    return this.filterByStatus('preparing');
+  },
+
+  delivery: function() {
+    return this.filterByStatus('delivery');
+  },
+
+  delivered: function() {
+    return this.filterByStatus('delivered');
   }
 });
