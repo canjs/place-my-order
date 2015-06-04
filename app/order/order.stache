@@ -75,7 +75,7 @@
             {{#if saveStatus.isPending}}
               <div class="loading"></div>
             {{else}}
-              <button type="submit" class="btn">Place My Order!</button>
+              <button type="submit" class="btn" {{^if order.items.length}}disabled{{/if}}>Place My Order!</button>
             {{/if}}
           {{/if}}
         </div>
