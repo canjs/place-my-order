@@ -12,5 +12,5 @@ var PhoneViewModel = can.Map.extend({
 can.Component.extend({
   tag: 'phone-validator',
   viewModel: PhoneViewModel,
-  template: can.view('order/phone/phone.stache')
+  template: can.view('components/order_phone/order_phone.stache')
 });

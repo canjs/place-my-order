@@ -40,5 +40,5 @@ var RestaurantListViewModel = can.Map.extend({
 can.Component.extend({
   tag: 'pmo-restaurant-list',
   viewModel: RestaurantListViewModel,
-  template: can.view('restaurant/list/list.stache')
+  template: can.view('components/restaurant_list/restaurant_list.stache')
 });

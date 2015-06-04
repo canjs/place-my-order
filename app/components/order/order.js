@@ -40,5 +40,5 @@ var OrderViewModel = can.Map.extend({
 can.Component.extend({
   tag: 'pmo-order',
   viewModel: OrderViewModel,
-  template: can.view('order/order.stache')
+  template: can.view('components/order/order.stache')
 });
