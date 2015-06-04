@@ -5,7 +5,7 @@
     {{#restaurant.value}}
       <h3>Order from {{name}}</h3>
 
-      <form can-submit="placeOrder">
+      <form (submit)="placeOrder">
         <ul class="nav nav-tabs">
           <li can-click="{setActiveTab 'lunch'}"
               {{#eq activeTab 'lunch'}}class="active"{{/eq}}>
