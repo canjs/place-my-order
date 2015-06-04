@@ -30,16 +30,6 @@ var OrderViewModel = can.Map.extend({
     }
   },
 
-  toggle: function(item, add) {
-    var items = this.attr('order.items');
-    var index = items.indexOf(item);
-    if(add && index === -1) {
-      items.push(item);
-    } else {
-      items.splice(index, 1);
-    }
-  },
-
   placeOrder: function() {
     var order = this.attr('order');
     this.attr('saveStatus', order.save());
