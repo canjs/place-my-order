@@ -7,11 +7,11 @@
 
       <form (submit)="placeOrder">
         <ul class="nav nav-tabs">
-          <li can-click="{setActiveTab 'lunch'}"
+          <li (click)="{setActiveTab 'lunch'}"
               {{#eq activeTab 'lunch'}}class="active"{{/eq}}>
             <a href="javascript://">Lunch menu</a>
           </li>
-          <li can-click="{setActiveTab 'dinner'}"
+          <li (click)="{setActiveTab 'dinner'}"
               {{#eq activeTab 'dinner'}}class="active"{{/eq}}>
             <a href="javascript://">Dinner menu</a>
           </li>
@@ -30,7 +30,7 @@
             {{#each menu.lunch}}
             <li class="list-group-item">
               <label>
-                <input type="checkbox" can-click="{toggle this @element.0.checked}"
+                <input type="checkbox" (click)="{toggle this @element.0.checked}"
                        can-value="{selected}">
                 {{name}} <span class="badge">${{price}}</span>
               </label>
@@ -44,7 +44,7 @@
             {{#each menu.dinner}}
             <li class="list-group-item">
               <label>
-                <input type="checkbox" can-click="{toggle this @element.0.checked}"
+                <input type="checkbox" (click)="{toggle this @element.0.checked}"
                        can-value="{selected}">
                 {{name}} <span class="badge">${{price}}</span>
               </label>
@@ -55,13 +55,13 @@
 
         <div class="form-group">
           <label class="control-label">Name:</label>
-          <input name="name" type="text" class="form-control" can-keyup="{order.attr 'name' @element.val}">
+          <input name="name" type="text" class="form-control" (keyup)="{order.attr 'name' @element.val}">
           <p>Please enter your name.</p>
         </div>
 
         <div class="form-group">
           <label class="control-label">Address:</label>
-          <input name="address" type="text" class="form-control" can-keyup="{order.attr 'address' @element.val}">
+          <input name="address" type="text" class="form-control" (keyup)="{order.attr 'address' @element.val}">
           <p class="help-text">Please enter your address.</p>
         </div>
 
