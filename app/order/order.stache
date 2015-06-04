@@ -6,17 +6,6 @@
       <h3>Order from {{name}}</h3>
 
       <form (submit)="placeOrder">
-        <ul class="nav nav-tabs">
-          <li (click)="{setActiveTab 'lunch'}"
-              {{#eq activeTab 'lunch'}}class="active"{{/eq}}>
-            <a href="javascript://">Lunch menu</a>
-          </li>
-          <li (click)="{setActiveTab 'dinner'}"
-              {{#eq activeTab 'dinner'}}class="active"{{/eq}}>
-            <a href="javascript://">Dinner menu</a>
-          </li>
-        </ul>
-
         <p class="info {{^if order.items.length}}text-error{{else}}text-success{{/if}}">
           {{^if order.items.length}}
             Please choose an item
@@ -25,35 +14,18 @@
           {{/if}}
         </p>
 
-        {{#eq activeTab 'lunch'}}
-          <ul class="list-group panel">
-            {{#each menu.lunch}}
-              <li class="list-group-item">
-                <label>
-                  <input type="checkbox"
-                    (change)="{order.items.toggle this}"
-                    {{#if order.items.has}}checked{{/if}}>
-                  {{name}} <span class="badge">${{price}}</span>
-                </label>
-              </li>
-            {{/each}}
-          </ul>
-        {{/eq}}
-
-        {{#eq activeTab 'dinner'}}
-          <ul class="list-group panel">
-            {{#each menu.dinner}}
-              <li class="list-group-item">
-                <label>
-                  <input type="checkbox"
-                    (change)="{order.items.toggle this}"
-                    {{#if order.items.has}}checked{{/if}}>
-                  {{name}} <span class="badge">${{price}}</span>
-                </label>
-              </li>
-            {{/each}}
-          </ul>
-        {{/eq}}
+        <ul class="list-group panel">
+          {{#each menu}}
+            <li class="list-group-item">
+              <label>
+                <input type="checkbox"
+                  (change)="{order.items.toggle this}"
+                  {{#if order.items.has}}checked{{/if}}>
+                {{name}} <span class="badge">${{price}}</span>
+              </label>
+            </li>
+          {{/each}}
+        </ul>
 
         <div class="form-group">
           <label class="control-label">Name:</label>
