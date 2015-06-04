@@ -1,3 +1,19 @@
+var ItemsList = can.List.extend({}, {
+  has: function(item) {
+    return this.indexOf(item) !== -1;
+  },
+
+  toggle: function(item) {
+    var index = this.indexOf(item);
+
+    if (index !== -1) {
+      this.splice(index, 1);
+    } else {
+      this.push(item);
+    }
+  }
+});
+
 var Order = can.Model.extend({
   create: 'POST /api/orders',
   findAll: 'GET /api/orders'
@@ -7,7 +23,7 @@ var Order = can.Model.extend({
       value: 'new'
     },
     items: {
-      Value: can.List
+      Value: ItemsList
     },
     total: {
       get: function() {
