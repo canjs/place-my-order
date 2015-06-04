@@ -38,6 +38,12 @@ var OrderViewModel = can.Map.extend({
 
   setActiveTab: function(newVal) {
     this.attr('activeTab', newVal);
+  },
+
+  startNewOrder: function() {
+    this.attr('order', new Order());
+    this.attr('saveStatus', null);
+    return false;
   }
 });
 
