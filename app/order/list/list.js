@@ -1,7 +1,7 @@
 var OrderHistoryItemViewModel = can.Map.extend({});
 
 can.Component.extend({
-  tag: 'pmo-order-history-item',
+  tag: 'pmo-orders-list',
   viewModel: OrderHistoryItemViewModel,
-  template: can.view('order/history/item/item.stache')
+  template: can.view('order/list/list.stache')
 });
