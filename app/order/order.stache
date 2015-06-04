@@ -3,85 +3,87 @@
     <div class="loading"></div>
   {{else}}
     {{#restaurant.value}}
-      <h3>Order from {{name}}</h3>
+      {{#if saveStatus.isResolved}}
+        <h3>Thanks for your order from {{name}}!</h3>
+        <p>We received your order totaling ${{order.total}}. Your confirmation number is {{saveStatus.value._id}}</p>
+        <p><a href="javascript://" (click)="{startNewOrder}">Place another order</a></p>
+      {{else}}
+        {{#if saveStatus.isPending}}
+          <div class="loading"></div>
+        {{else}}
+          <h3>Order from {{name}}</h3>
 
-      <form (submit)="placeOrder">
-        <ul class="nav nav-tabs">
-          <li (click)="{setActiveTab 'lunch'}"
-              {{#eq activeTab 'lunch'}}class="active"{{/eq}}>
-            <a href="javascript://">Lunch menu</a>
-          </li>
-          <li (click)="{setActiveTab 'dinner'}"
-              {{#eq activeTab 'dinner'}}class="active"{{/eq}}>
-            <a href="javascript://">Dinner menu</a>
-          </li>
-        </ul>
-
-        <p class="info {{^if order.items.length}}text-error{{else}}text-success{{/if}}">
-          {{^if order.items.length}}
-            Please choose an item
-          {{else}}
-            {{order.items.length}} selected
-          {{/if}}
-        </p>
-
-        {{#eq activeTab 'lunch'}}
-          <ul class="list-group panel">
-            {{#each menu.lunch}}
-              <li class="list-group-item">
-                <label>
-                  <input type="checkbox"
-                    (change)="{order.items.toggle this}"
-                    {{#if order.items.has}}checked{{/if}}>
-                  {{name}} <span class="badge">${{price}}</span>
-                </label>
+          <form (submit)="placeOrder">
+            <ul class="nav nav-tabs">
+              <li (click)="{setActiveTab 'lunch'}"
+                  {{#eq activeTab 'lunch'}}class="active"{{/eq}}>
+                <a href="javascript://">Lunch menu</a>
               </li>
-            {{/each}}
-          </ul>
-        {{/eq}}
-
-        {{#eq activeTab 'dinner'}}
-          <ul class="list-group panel">
-            {{#each menu.dinner}}
-              <li class="list-group-item">
-                <label>
-                  <input type="checkbox"
-                    (change)="{order.items.toggle this}"
-                    {{#if order.items.has}}checked{{/if}}>
-                  {{name}} <span class="badge">${{price}}</span>
-                </label>
+              <li (click)="{setActiveTab 'dinner'}"
+                  {{#eq activeTab 'dinner'}}class="active"{{/eq}}>
+                <a href="javascript://">Dinner menu</a>
               </li>
-            {{/each}}
-          </ul>
-        {{/eq}}
+            </ul>
 
-        <div class="form-group">
-          <label class="control-label">Name:</label>
-          <input name="name" type="text" class="form-control" can-value="{order.name}">
-          <p>Please enter your name.</p>
-        </div>
+            <p class="info {{^if order.items.length}}text-error{{else}}text-success{{/if}}">
+              {{^if order.items.length}}
+                Please choose an item
+              {{else}}
+                {{order.items.length}} selected
+              {{/if}}
+            </p>
 
-        <div class="form-group">
-          <label class="control-label">Address:</label>
-          <input name="address" type="text" class="form-control" can-value="{order.address}">
-          <p class="help-text">Please enter your address.</p>
-        </div>
+            {{#eq activeTab 'lunch'}}
+              <ul class="list-group panel">
+                {{#each menu.lunch}}
+                  <li class="list-group-item">
+                    <label>
+                      <input type="checkbox"
+                        (change)="{order.items.toggle this}"
+                        {{#if order.items.has}}checked{{/if}}>
+                      {{name}} <span class="badge">${{price}}</span>
+                    </label>
+                  </li>
+                {{/each}}
+              </ul>
+            {{/eq}}
 
-        <phone-validator order="{order}"></phone-validator>
+            {{#eq activeTab 'dinner'}}
+              <ul class="list-group panel">
+                {{#each menu.dinner}}
+                  <li class="list-group-item">
+                    <label>
+                      <input type="checkbox"
+                        (change)="{order.items.toggle this}"
+                        {{#if order.items.has}}checked{{/if}}>
+                      {{name}} <span class="badge">${{price}}</span>
+                    </label>
+                  </li>
+                {{/each}}
+              </ul>
+            {{/eq}}
 
-        <div class="submit">
-          <h4>Total: ${{order.total}}</h4>
-          {{#if saveStatus.isResolved}}
-            Received order (Confirmation: {{saveStatus.value._id}})
-          {{else}}
-            {{#if saveStatus.isPending}}
-              <div class="loading"></div>
-            {{else}}
+            <div class="form-group">
+              <label class="control-label">Name:</label>
+              <input name="name" type="text" class="form-control" can-value="{order.name}">
+              <p>Please enter your name.</p>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label">Address:</label>
+              <input name="address" type="text" class="form-control" can-value="{order.address}">
+              <p class="help-text">Please enter your address.</p>
+            </div>
+
+            <phone-validator order="{order}"></phone-validator>
+
+            <div class="submit">
+              <h4>Total: ${{order.total}}</h4>
               <button type="submit" class="btn" {{^if order.items.length}}disabled{{/if}}>Place My Order!</button>
-            {{/if}}
-          {{/if}}
-        </div>
-      </form>
+            </div>
+          </form>
+        {{/if}}
+      {{/if}}
     {{/restaurant.value}}
   {{/if}}
 </div>
