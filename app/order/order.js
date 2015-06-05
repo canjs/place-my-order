@@ -6,9 +6,6 @@ var OrderViewModel = can.Map.extend({
     order: {
       Value: Order
     },
-    saveStatus: {
-      Value: Object
-    },
     restaurant: {
       get: function(old) {
         var id = this.attr('slug');
