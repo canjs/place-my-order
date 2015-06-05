@@ -9,9 +9,6 @@ var OrderViewModel = can.Map.extend({
     saveStatus: {
       Value: Object
     },
-    activeTab: {
-      value: 'lunch'
-    },
     restaurant: {
       get: function(old) {
         var id = this.attr('slug');
@@ -34,10 +31,6 @@ var OrderViewModel = can.Map.extend({
     var order = this.attr('order');
     this.attr('saveStatus', order.save());
     return false;
-  },
-
-  setActiveTab: function(newVal) {
-    this.attr('activeTab', newVal);
   }
 });
 
