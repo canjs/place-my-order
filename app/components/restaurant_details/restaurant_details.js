@@ -12,5 +12,5 @@ var RestaurantDetailsViewModel = can.Map.extend({
 can.Component.extend({
   tag: 'pmo-restaurant-details',
   viewModel: RestaurantDetailsViewModel,
-  template: can.view('restaurant/details/details.stache')
+  template: can.view('components/restaurant_details/restaurant_details.stache')
 });
