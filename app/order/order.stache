@@ -3,57 +3,58 @@
     <div class="loading"></div>
   {{else}}
     {{#restaurant.value}}
-      <h3>Order from {{name}}</h3>
+      {{#if saveStatus.isResolved}}
+        <pmo-order-details order="{saveStatus.value}"></pmo-order-details>
+        <p><a href="javascript://" (click)="{startNewOrder}">Place another order</a></p>
+      {{else}}
+        {{#if saveStatus.isPending}}
+          <div class="loading"></div>
+        {{else}}
+          <h3>Order from {{name}}</h3>
 
-      <form (submit)="placeOrder">
-        <p class="info {{^if order.items.length}}text-error{{else}}text-success{{/if}}">
-          {{^if order.items.length}}
-            Please choose an item
-          {{else}}
-            {{order.items.length}} selected
-          {{/if}}
-        </p>
+          <form (submit)="placeOrder">
+            <p class="info {{^if order.items.length}}text-error{{else}}text-success{{/if}}">
+              {{^if order.items.length}}
+                Please choose an item
+              {{else}}
+                {{order.items.length}} selected
+              {{/if}}
+            </p>
 
-        <ul class="list-group panel">
-          {{#each menu}}
-            <li class="list-group-item">
-              <label>
-                <input type="checkbox"
-                  (change)="{order.items.toggle this}"
-                  {{#if order.items.has}}checked{{/if}}>
-                {{name}} <span class="badge">${{price}}</span>
-              </label>
-            </li>
-          {{/each}}
-        </ul>
+            <ul class="list-group panel">
+              {{#each menu}}
+                <li class="list-group-item">
+                  <label>
+                    <input type="checkbox"
+                      (change)="{order.items.toggle this}"
+                      {{#if order.items.has}}checked{{/if}}>
+                    {{name}} <span class="badge">${{price}}</span>
+                  </label>
+                </li>
+              {{/each}}
+            </ul>
 
-        <div class="form-group">
-          <label class="control-label">Name:</label>
-          <input name="name" type="text" class="form-control" can-value="{order.name}">
-          <p>Please enter your name.</p>
-        </div>
+            <div class="form-group">
+              <label class="control-label">Name:</label>
+              <input name="name" type="text" class="form-control" can-value="{order.name}">
+              <p>Please enter your name.</p>
+            </div>
 
-        <div class="form-group">
-          <label class="control-label">Address:</label>
-          <input name="address" type="text" class="form-control" can-value="{order.address}">
-          <p class="help-text">Please enter your address.</p>
-        </div>
+            <div class="form-group">
+              <label class="control-label">Address:</label>
+              <input name="address" type="text" class="form-control" can-value="{order.address}">
+              <p class="help-text">Please enter your address.</p>
+            </div>
 
-        <phone-validator order="{order}"></phone-validator>
+            <phone-validator order="{order}"></phone-validator>
 
-        <div class="submit">
-          <h4>Total: ${{order.total}}</h4>
-          {{#if saveStatus.isResolved}}
-            Received order (Confirmation: {{saveStatus.value._id}})
-          {{else}}
-            {{#if saveStatus.isPending}}
-              <div class="loading"></div>
-            {{else}}
+            <div class="submit">
+              <h4>Total: ${{order.total}}</h4>
               <button type="submit" class="btn" {{^if order.items.length}}disabled{{/if}}>Place My Order!</button>
-            {{/if}}
-          {{/if}}
-        </div>
-      </form>
+            </div>
+          </form>
+        {{/if}}
+      {{/if}}
     {{/restaurant.value}}
   {{/if}}
 </div>

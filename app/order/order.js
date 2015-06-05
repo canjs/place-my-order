@@ -28,6 +28,12 @@ var OrderViewModel = can.Map.extend({
     var order = this.attr('order');
     this.attr('saveStatus', order.save());
     return false;
+  },
+
+  startNewOrder: function() {
+    this.attr('order', new Order());
+    this.attr('saveStatus', null);
+    return false;
   }
 });
 
