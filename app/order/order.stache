@@ -4,8 +4,7 @@
   {{else}}
     {{#restaurant.value}}
       {{#if saveStatus.isResolved}}
-        <h3>Thanks for your order from {{name}}!</h3>
-        <p>We received your order totaling ${{order.total}}. Your confirmation number is {{saveStatus.value._id}}</p>
+        <pmo-order-details order="{saveStatus.value}"></pmo-order-details>
         <p><a href="javascript://" (click)="{startNewOrder}">Place another order</a></p>
       {{else}}
         {{#if saveStatus.isPending}}
