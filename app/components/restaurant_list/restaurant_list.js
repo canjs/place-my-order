@@ -23,9 +23,8 @@ var RestaurantListViewModel = can.Map.extend({
     },
     restaurants: {
       get: function(){
-        var params = {},
-          state = this.attr('state'),
-          city = this.attr('city');
+        var city = this.attr('city'),
+          state = this.attr('state');
 
         return state && city ?
           Restaurant.findAll({
@@ -39,6 +38,6 @@ var RestaurantListViewModel = can.Map.extend({
 
 can.Component.extend({
   tag: 'pmo-restaurant-list',
-  viewModel: RestaurantListViewModel,
-  template: can.view('components/restaurant_list/restaurant_list.stache')
+  template: can.view('components/restaurant_list/restaurant_list.stache'),
+  viewModel: RestaurantListViewModel
 });
