@@ -1,3 +1,6 @@
+import can from 'can';
+import 'can/util/fixture/';
+
 can.fixture('GET /api/cities', function(request, response) {
   can.ajax({
     url: 'models/' + request.data.state + '.json',

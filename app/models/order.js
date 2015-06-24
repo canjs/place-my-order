@@ -1,3 +1,6 @@
+import can from 'can';
+import 'can/map/define/';
+
 var ItemsList = can.List.extend({}, {
   has: function(item) {
     return this.indexOf(item) !== -1;
@@ -72,3 +75,5 @@ Order.List = Order.List.extend({
     return this.filterByStatus('delivered');
   }
 });
+
+export default Order;

@@ -1,44 +1,9 @@
-var RestaurantListViewModel = can.Map.extend({
-  define: {
-    states: {
-      get: function() {
-        return State.findAll({});
-      }
-    },
-    state: {
-      value: null,
-      set: function() {
-        // Remove the city when the state changes
-        this.attr('city', null);
-      }
-    },
-    cities: {
-      get: function() {
-        var state = this.attr('state');
-        return state ? City.findAll({ state: state }) : null;
-      }
-    },
-    city: {
-      value: null
-    },
-    restaurants: {
-      get: function(){
-        var params = {},
-          state = this.attr('state'),
-          city = this.attr('city');
-
-        return state && city ?
-          Restaurant.findAll({
-            'address.state': state,
-            'address.city': city
-          }) : null;
-      }
-    }
-  }
-});
+import can from 'can';
+import VM from './viewModel';
+import template from './restaurant_list.stache!';
 
 can.Component.extend({
   tag: 'pmo-restaurant-list',
-  viewModel: RestaurantListViewModel,
-  template: can.view('components/restaurant_list/restaurant_list.stache')
+  viewModel: VM,
+  template: template
 });

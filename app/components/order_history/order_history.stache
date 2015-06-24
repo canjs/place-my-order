@@ -1,3 +1,5 @@
+<can-import from="components/order_list/"/>
+
 <div class="order-history">
   <div class="order header">
     <address>Name / Address / Phone</address>

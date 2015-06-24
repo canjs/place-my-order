@@ -1,15 +1,9 @@
-var HistoryViewModel = can.Map.extend({
-  define: {
-    orders: {
-      get: function(){
-        return Order.findAll({});
-      }
-    }
-  }
-});
+import can from 'can';
+import VM from './viewModel';
+import template from './order_history.stache!';
 
 can.Component.extend({
   tag: 'pmo-order-history',
-  viewModel: HistoryViewModel,
-  template: can.view('components/order_history/order_history.stache')
+  viewModel: VM,
+  template: template
 });

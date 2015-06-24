@@ -1,16 +1,9 @@
-var RestaurantDetailsViewModel = can.Map.extend({
-  define: {
-    restaurant: {
-      get: function() {
-        var slug = this.attr('slug');
-        return Restaurant.findOne({id: slug});
-      }
-    }
-  }
-});
+import can from 'can';
+import VM from './viewModel';
+import template from './restaurant_details.stache!';
 
 can.Component.extend({
   tag: 'pmo-restaurant-details',
-  viewModel: RestaurantDetailsViewModel,
-  template: can.view('components/restaurant_details/restaurant_details.stache')
+  viewModel: VM,
+  template: template
 });
